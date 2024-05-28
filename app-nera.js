@@ -10,11 +10,12 @@ const app = express();
 const usuario = require('./src/controllers/UsuarioController');
 const questao = require('./src/controllers/QuestaoController');
 
-//Rotas
+// Middleware
 app.use(bodyParser.json());
-//Função CORS para a autorização do uso da API
-app.use(cors())
-app.get('/', (req, res)=> res.send('Estou aqui'))
+app.use(cors());
+
+// Rotas
+app.get('/', (req, res) => res.send('Estou aqui'));
 app.use('/usuario', usuario);
 app.use('/questao', questao);
 
